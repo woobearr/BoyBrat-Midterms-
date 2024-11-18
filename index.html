@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+      integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer">
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" >
+    <title>BoyBrat</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: #FFFFFF;
+        color: #181818;
+        font-family: Montserrat, Sans-serif;
+        font-weight: 300;
+      }
+     
+      input {
+        width: 240px;
+        height: 24px;
+        margin: 4px 0;
+        font-family: Montserrat, Sans-serif;
+        font-weight: 300;
+      }
+     
+      .button-group {
+        margin-top: 32px;
+      }
+
+      button {
+        font-family: Montserrat, Sans-serif;
+        font-weight: 700;
+        height: 32px;
+        width: 120px;
+        margin: 0 2px;
+        background-color: #181818;
+        color: #8ACE00;
+        border-radius: 4px;
+      }
+     
+      .hero {
+        background-color: #181818;
+        height: 80px;
+      }
+     
+      .hero .logo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 16px;
+      }
+     
+      .products-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 40px 0;
+        gap: 16px;
+      }
+     
+      .product {
+        width: 320px;
+        padding: 8px;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.16);
+      }
+     
+      .product .product-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        margin-bottom: 16px;
+      }
+     
+      .product .product-name {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+     
+      .product .product-price {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: #EB148E;
+        margin-bottom: 16px;
+      }
+     
+      .product .product-action{
+        margin-bottom: 16px;
+      }
+      
+      .carousel-control-prev{
+		    position: absolute;
+		    top: 50%;
+		    trasform: trasformY(-50%);
+	    }
+	  
+	    .carousel-control-next{
+		    position: absolute;
+		    top: 50%;
+		    trasform: trasformY(-50%);
+	    }
+	  
+	    #exampleInputEmail1 {
+		  width: 360px;
+	    }
+	  
+	    .newsletter {
+		    display: grid;
+		    justify-content: center;
+	    }
+
+    </style>
+  </head>
+  <body>
+        <div class="hero">
+            <div class="logo">
+                <img src="Images/porcupine.png" class="header-logo__icon pd-0 mt-0 mb-5" width="4.5%">
+            </div>
+        </div>        
+        <div id="carouselExample" class="carousel slide">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="Images/banner.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="Images/boybrat sale banner.jpg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="Images/collection banner.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="Images/boybrat x charli xcx.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+      <div class="products-list">
+        <div class="product">
+            <div class="product-img"><img src="Images/pinkwoobear_front.jpg"></div>
+            <div class="product-name">Issa Knife</div>
+            <div class="product-price">₱365</div>
+            <div class="product-action"><button id="add-to-cart-1">Add to Cart</button></div>
+        </div>
+       
+        <div class="product">
+            <div class="product-img"><img src="Images/causebloom_front.jpg"></div>
+            <div class="product-name">Von Dutch</div>
+            <div class="product-price">₱365</div>
+            <div class="product-action"><button id="add-to-cart-2">Add to Cart</button></div>
+        </div>
+       
+        <div class="product">
+            <div class="product-img"><img src="Images/beigestar_front.jpg"></div>
+            <div class="product-name">Mean Girls</div>
+            <div class="product-price">₱365</div>
+            <div class="product-action"><button id="add-to-cart-3">Add to Cart</button></div>
+        </div>
+       
+        <div class="product">
+            <div class="product-img"><img src="Images/denimwoobear_back.jpg"></div>
+            <div class="product-name">Apple</div>
+            <div class="product-price">₱365</div>
+            <div class="product-action"><button id="add-to-cart-4">Add to Cart</button></div>
+        </div>
+       
+        <div class="product">
+            <div class="product-img"><img src="Images/sulkybrats_front.jpg"></div>
+            <div class="product-name">B2b</div>
+            <div class="product-price">₱365</div>
+            <div class="product-action"><button id="add-to-cart-5">Add to Cart</button></div>
+        </div>
+       
+        <div class="product">
+            <div class="product-img"><img src="Images/blackbloomjeans_front.jpg"></div>
+            <div class="product-name">Club Classics</div>
+            <div class="product-price">₱365</div>
+            <div class="product-action"><button id="add-to-cart-6">Add to Cart</button></div>
+        </div>
+       
+        <div class="product">
+            <div class="product-img"><img src="Images/whitewoobear_front.jpg"></div>
+            <div class="product-name">Girl, so confusing</div>
+            <div class="product-price">₱365</div>
+            <div class="product-action"><button id="add-to-cart-7">Add to Cart</button></div>
+        </div>
+       
+        <div class="product">
+            <div class="product-img"><img src="Images/woobearpatch_back.jpg"></div>
+            <div class="product-name">Talk Talk</div>
+            <div class="product-price">₱365</div>
+            <div class="product-action"><button id="add-to-cart-8">Add to Cart</button></div>
+        </div>
+      </div>
+     
+       <div class="modal" id="addedToCart">
+        <div class="modal-dialog">
+            <div class="modal-content" style="background-color: #EB148E;">
+                <div class="modal-header">
+                    <h4 class="modal-title fw-bold">Product Added to Cart</h4>
+                    <button type="button" class="btn-close" id="modal-close" data-bs-dismiss="modal"></button>
+                </div>
+            </div>
+        </div>
+        </div>
+ 
+    <script>
+        var modal = document.getElementById("addedToCart");
+        var product1 = document.getElementById("add-to-cart-1");
+        var product2 = document.getElementById("add-to-cart-2");
+        var product3 = document.getElementById("add-to-cart-3");
+        var product4 = document.getElementById("add-to-cart-4");
+        var product5 = document.getElementById("add-to-cart-5");
+        var product6 = document.getElementById("add-to-cart-6");
+        var product7 = document.getElementById("add-to-cart-7");
+        var product8 = document.getElementById("add-to-cart-8");
+        var close = document.getElementById("modal-close");
+       
+        product1.onclick = function() {
+            modal.style.display = "block";
+        }
+       
+        product2.onclick = function() {
+            modal.style.display = "block";
+        }
+       
+        product3.onclick = function() {
+            modal.style.display = "block";
+        }
+       
+        product4.onclick = function() {
+            modal.style.display = "block";
+        }
+       
+        product5.onclick = function() {
+            modal.style.display = "block";
+        }
+       
+        product6.onclick = function() {
+            modal.style.display = "block";
+        }
+       
+        product7.onclick = function() {
+            modal.style.display = "block";
+        }
+       
+        product8.onclick = function() {
+            modal.style.display = "block";
+        }
+       
+        close.onclick = function() {
+            modal.style.display = "none";
+        }
+       
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+       
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+<div class="text-center" style="background-color: #8ACE00; padding: 40px 0;">
+    <h2 id="Archive" class="text-center pd-1 mt-1 mb-5 fw-bold" style="color: #181818;">Artist Collaboration</h2>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/UV226kmbv6U?si=rNfxbbxzZjTPNS9t" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="col">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/aSm_rxgxurw?si=lDS7jzBZP2djGlIm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+      </div>
+    </div>
+
+    <h2 id="About" class="text-center pd-1 mt-5 mb-1 fw-bold" style="color: #181818;">About</h2>
+    <div class="container text-center">
+      <div class="row">
+        <div class="col">
+          <h3>
+            The BoyBrat x Charli xcx
+            <small class="text-body-secondary">collaboration is a bold fusion of edgy streetwear and futuristic pop energy. BoyBrat, known for its gender-fluid designs and rebellious aesthetic, joins forces with Charli xcx, a pop powerhouse celebrated for her daring style and boundary-pushing music.</small>
+          </h3>
+        </div>
+      </div>
+    </div>
+
+    <h2 id="Cart" class="text-center pd-1 mt-5 mb-1 fw-bold text-black">Subscribe to our Newsletter for free!</h2>
+    <div class="container text-center newsletter">
+      <div class="row">
+        <div class="col">
+          <form>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <p id="demo">We'll never share your email with anyone else.</p>
+                <button type="button" onclick="myFunction()">Submit</button>
+                <script>
+                function myFunction() {
+                document.getElementById("demo").innerHTML = "Thank you for subscribing to our Newsletter!";
+                }
+                </script>
+			</div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <footer class="mt-3">
+      <p class="text-center mb-0 fs-5 fw-bold bg-black" style="height: 30px; color: #EB148E;">
+        © 2024 BoyBrat. All rights reserved.
+        <a href="https://www.youtube.com/@officialcharlixcx"> <i class="fa-brands fa-square-youtube" style="color: #EB148E;"></i></a> 
+        <a href="https://www.instagram.com/mowalola/"> <i class="fa-brands fa-square-instagram" style="color: #EB148E;"></i></a>
+      </p>
+
+    </footer>
+    <script src="https://kit.fontawesome.com/e7831e99d1.js" crossorigin="anonymous"></script>
+   </body>
+</html>
